@@ -1,0 +1,29 @@
+cargo-features = ["different-binary-name"]
+
+[package]
+name = "flipper-shooty-mcshipface"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85.0"
+autobins = false
+autoexamples = false
+autotests = false
+autobenches = false
+
+[[bin]]
+name = "flipper-shooty-mcshipface"
+filename = "shooty-mcshipface.fap"
+bench = false
+test = false
+
+[dependencies]
+flipperzero = { git = "https://github.com/Shadlock0133/flipperzero.git", features = [
+    "alloc",
+] }
+flipperzero-sys = { git = "https://github.com/Shadlock0133/flipperzero.git" }
+flipperzero-rt = { git = "https://github.com/Shadlock0133/flipperzero.git" }
+flipperzero-alloc = { git = "https://github.com/Shadlock0133/flipperzero.git" }
+bitflags = "2.8.0"
+
+[build-dependencies]
+image = { version = "0.25.5", default-features = false, features = ["png"] }
